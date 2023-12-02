@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gmail Inbox</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex h-screen bg-gray-100">
+  <!-- Sidebar -->
+  <div class="w-64 flex-none">
+    <div class="p-2 flex gap-4 items-center ml-4 ">
+      <span class="material-symbols-outlined hover:bg-gray-200 cursor-pointer p-2 rounded-full">
+        menu
+      </span>
+      <img src="assets/logo-gmail.png" alt="" class="cursor-pointer">
+    </div>
+    <!-- Sidebar links go here -->
+    <nav class="p-2">
+      <!-- Compose -->
+      <div class="flex items-center p-2 bg-sky-200 w-2/3 rounded-xl m-4 hover:shadow-lg">
+        <span class="material-symbols-outlined">
+            edit
+        </span>
+        <a href="#" class="block py-2 px-4 text-lg">Compose</a>
+      </div>
+      <!-- Inbox -->
+      <div class="flex items-center pl-4  hover:bg-gray-300 hover:rounded-full">
+        <span class="material-symbols-outlined">
+          inbox
+        </span>
+        <a href="#" class="block py-2 px-4 ">Inbox</a>
+      </div>
+      <!-- Starred -->
+      <div class="flex items-center pl-4  hover:bg-gray-300 hover:rounded-full">
+        <span class="material-symbols-outlined">
+          star
+        </span>
+        <a href="#" class="block py-2 px-4 ">Starred</a>
+      </div>
+      <!-- Snoozed -->
+      <div class="flex items-center pl-4  hover:bg-gray-300 hover:rounded-full">
+        <span class="material-symbols-outlined">
+          snooze
+        </span>
+        <a href="#" class="block py-2 px-4 ">Snoozed</a>
+      </div>
+      <!-- Sent -->
+      <div class="flex items-center pl-4  hover:bg-gray-300 hover:rounded-full">
+        <span class="material-symbols-outlined">
+          fast_forward
+        </span>
+        <a href="#" class="block py-2 px-4 ">Sent</a>
+      </div>
+      <!-- Draft -->
+      <div class="flex items-center pl-4  hover:bg-gray-300 hover:rounded-full">
+        <span class="material-symbols-outlined">
+          drafts
+        </span>
+        <a href="#" class="block py-2 px-4 ">Draft</a>
+      </div>
+      <!-- More -->
+      <div class="flex items-center pl-4  hover:bg-gray-300 hover:rounded-full">
+        <span class="material-symbols-outlined">
+          expand_more
+        </span>
+        <a href="#" class="block py-2 px-4 ">More</a>
+      </div>
+    </nav>
+    <div class="flex items-center p-4 m-2 justify-between">
+      <h4 class="font-medium">Labels</h4>
+      <span class="material-symbols-outlined cursor-pointer">
+        add
+      </span>
+    </div>
+  </div>
+  <!-- Content Area -->
+  <div class="flex-1 flex flex-col">
+    <!-- Header -->
+    <header class="border-b-2 border-gray-200 bg-gray-100">
+      <div class="p-4 relative flex items-center justify-between">
+        <div class="relative">
+          <span class="material-symbols-outlined absolute left-5 top-1/2 transform -translate-y-1/2">
+            search
+          </span>
+          <input type="search" placeholder="Search Mail"
+            class="p-4 pl-12 pr-12 rounded-full font-semi-bold bg-indigo-100 focus:bg-white" style="width: 700px;">
+          <span class="material-symbols-outlined absolute right-5 top-1/2 transform -translate-y-1/2">
+            tune
+          </span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="material-symbols-outlined cursor-pointer p-2 hover:bg-gray-300 hover:rounded-full">
+            help
+          </span>
+          <span class="material-symbols-outlined cursor-pointer p-2 hover:bg-gray-300 hover:rounded-full">
+            settings
+          </span>
+          <span class="material-symbols-outlined cursor-pointer p-2 hover:bg-gray-300 hover:rounded-full">
+            apps
+          </span>
+          <span class="material-symbols-outlined cursor-pointer p-2 hover:bg-gray-300 hover:rounded-full">
+            person
+          </span>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex bg-white p-4 rounded-xl overflow-x-auto">
+      <div class="flex-1 rounded-xl">
+        <!-- icons -->
+        <div class="flex justify-between items-center">
+          <div class="flex p-2">
+            <div class="hover:bg-gray-200 hover:rounded-full">
+              <span class="material-symbols-outlined p-2 cursor-pointer text-md">
+                check_box_outline_blank<span class="text-sm">&#11206;</span>
+              </span>
+            </div>
+            <div class="hover:bg-gray-200 hover:rounded-full">
+              <span class="material-symbols-outlined p-2 cursor-pointer text-md">
+                refresh
+              </span>
+            </div>
+            <div class="hover:bg-gray-300 hover:rounded-full">
+              <span class="material-symbols-outlined p-2 cursor-pointer text-md">
+                more_vert
+              </span>
+            </div>
+          </div>
+
+          <!-- Total Mail -->
+          <div class="flex items-center gap-4">
+            <div class="hover:bg-gray-200 cursor-pointer p-2">
+              <span class="text-sm">
+                <span>1</span>-
+                <span>50</span>
+                <span>of</span>
+                <span>15,746</span>
+              </span>
+            </div>
+            <span class="material-symbols-outlined hover:bg-gray-200 cursor-pointer p-2 rounded-full">
+              chevron_left
+            </span>
+            <span class="material-symbols-outlined hover:bg-gray-200 cursor-pointer p-2 rounded-full">
+              chevron_right
+            </span>
+          </div>
+        </div>
+        <!-- Heading -->
+        <div class="flex gap-40 items-center mt-2">
+          <div class="flex items-center gap-2 p-2 hover:bg-gray-200">
+            <span class="material-symbols-outlined">
+              inbox
+            </span>
+            <a href="">Primary</a>
+          </div>
+          <div class="flex items-center gap-2 p-2 hover:bg-gray-200">
+            <span class="material-symbols-outlined">
+              sell
+            </span>
+            <a href="">Promotion</a>
+          </div>
+          <div class="flex items-center gap-2 p-2 hover:bg-gray-200">
+            <span class="material-symbols-outlined">
+              group
+            </span>
+            <a href="">Updates</a>
+          </div>
+        </div>
+        <!-- Horizontal Border -->
+        <div class="border-b border-gray-200 w-full mt-2"></div>
+        <!-- All Mails -->
+        <!-- First Mail -->
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+          </div>
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+
+
+
+
+        <!-- Second Mail -->
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+          </div>
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+        <!-- Third Mail -->
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+          </div>
+
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+        <!-- Fourth Mail -->
+
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+          </div>
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+        <!-- Fifth Mail -->
+
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+          </div>
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+
+        <!-- Sixth Mail -->
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+          </div>
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+
+        <!-- Seventh Mail -->
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+          </div>
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+        <!-- Eight Mail -->
+
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+          </div>
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+
+        <!-- Ninth Mail -->
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+            
+          </div>
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+
+        <!-- Tenth mail -->
+
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+          </div>
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+
+        <!-- Eleventh mail -->
+        <div class="group bg-indigo-50 hover:bg-white hover:shadow-lg">
+          <div class="flex items-center gap-44 relative cursor-pointer">
+            <!-- Primary mail section -->
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                check_box_outline_blank
+              </span>
+              <span class="material-symbols-outlined text-sm p-2 cursor-pointer hover:bg-gray-100 rounded-full">
+                star
+              </span>
+              <span class="p-2 cursor-pointer">PW</span>
+            </div>
+            <!-- Promotion mail section -->
+            <div class="flex items-center gap-72">
+              <span>Important mail for Two-step Verification cccccccccccc</span>
+              <span class="group-hover:hidden">15:00</span>
+            </div>
+            <!-- Hidden icons -->
+            <div class="hidden group-hover:flex items-center">
+              <!-- Show delete or archive icon here -->
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                delete
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                archive
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                mail
+              </span>
+              <span class="material-symbols-outlined text-md p-2 cursor-pointer">
+                snooze
+                </span>
+            </div>
+          </div>
+          <!-- Horizontal Border -->
+          <div class="border-b border-gray-200 w-full mt-2"></div>
+        </div>
+
+      </div>
+  </div>
+  <!-- Right Sidebar -->
+  <div class="w-18 mt-28">
+    <div class="flex  flex-col items-center gap-4">
+      <div class="hover:bg-gray-200 cursor-pointer p-2 rounded-full">
+        <img src="assets/calendar.png" alt="" class="w-8">
+      </div>
+
+      <div class="hover:bg-gray-200 cursor-pointer p-2 rounded-full">
+        <img src="assets/tasks.png" alt="" class="w-8">
+      </div>
+
+      <div class="hover:bg-gray-200 cursor-pointer p-2 rounded-full">
+        <img src="assets/keep.png" alt="" class="w-8">
+      </div>
+
+      <div class="hover:bg-gray-200 cursor-pointer p-2 rounded-full">
+        <img src="assets/contacts.png" alt="" class="w-8">
+      </div>
+      <div class="border-b border-gray-500 w-full mt-4"></div>
+      <div class="m-4">
+        <span class="material-symbols-outlined cursor-pointer">
+          add
+        </span>
+      </div>
+    </div>
+    <!-- End of Right Sidebar -->
+  </div>
+  </main>
+  </div>
+</body>
+
+</html>
