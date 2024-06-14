@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="w-1/2 border border-gray-300 ml-64 mt-4">
+    <header class="bg-gray-600 p-4 m-8">
+      <h1 class="text-white text-center text-2xl">Quiz App</h1>
+      <div class="flex justify-between items-center">
+        <span class="text-white" id="questionCounter">Question 1/10</span>
+        <span class="text-white" id="score">Score: 0</span>
+      </div>
+    </header>
+    <div class="m-8 w-1/2">
+      <p class="font-bold" id="questionText"></p>
+    </div>
+    <div class="m-8 w-1/4" id="optionsContainer">
+      <!-- Options will be dynamically inserted here -->
+    </div>
+    <div class="ml-20 mb-4">
+      <button class="bg-gray-600 text-white pl-4 pr-4 pt-2 pb-2" onclick="next()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        question: "What is 2+2?",
+        options: ["3", "4", "6", "5"],
+        correctAnswer: "4"
+      },
+      {
+        question: "Which planet is known as the Red Planet?",
+        options: ["Mars", "Jupiter", "Venus", "Saturn"],
+        correctAnswer: "Mars"
+      },
+      {
+        question: "What is the capital of France?",
+        options: ["London", "Berlin", "Paris", "Rome"],
+        correctAnswer: "Paris"
+      },
+      {
+        question: "Who wrote the play 'Romeo and Juliet'?",
+        options: [" William Shakespeare", "Jane Austen", "Charles Dickens", "F. Scott Fitzgerald"],
+        correctAnswer: " William Shakespeare"
+      },
+      {
+        question: "What is the largest planet in our solar system?",
+        options: ["Earth", "Jupiter", "Venus", "Saturn"],
+        correctAnswer: "Jupiter"
+      },
+
+      // Add more questions as needed
+    ];
+
+    let currentQuestionIndex = 0;
+    let optionsContainer; // Declare optionsContainer outside of showQuestion
+
+    function showQuestion() {
+      const currentQuestion = questions[currentQuestionIndex];
+      document.getElementById('questionText').textContent = currentQuestion.question;
+      
+      optionsContainer = document.getElementById('optionsContainer');
+      optionsContainer.innerHTML = ''; // Clear previous options
+
+      currentQuestion.options.forEach((option, index) => {
+        const paragraph = document.createElement('p');
+        paragraph.className = 'bg-gray-600 text-white pl-4 pr-4 pt-2 pb-2 m-2 cursor-pointer';
+        paragraph.textContent = option;
+        paragraph.onclick = () => checkAnswer(option);
+        optionsContainer.appendChild(paragraph);
+      });
+      document.getElementById('questionCounter').textContent = `Question ${currentQuestionIndex + 1}/${questions.length}`;
+    }
+
+    function checkAnswer(selectedOption) {
+      if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
+        // Increment score if the answer is correct
+        const scoreElement = document.getElementById('score');
+        const currentScore = parseInt(scoreElement.textContent.split(' ')[1], 10);
+        scoreElement.textContent = `Score: ${currentScore + 1}`;
+      }
+
+      // Highlight the correct answer in green
+      const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+      const paragraphs = optionsContainer.getElementsByTagName('p');
+      for (const paragraph of paragraphs) {
+        if (paragraph.textContent === correctAnswer) {
+          paragraph.style.backgroundColor = 'green';
+        } else if (paragraph.textContent === selectedOption) {
+          paragraph.style.backgroundColor = 'red';
+        }
+        // Disable further clicks
+        paragraph.onclick = null;
+      }
+    }
+
+    function next() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        showQuestion();
+      } else {
+        const finalScore = document.getElementById('score').textContent;
+        alert(`Quiz completed!\n${finalScore}`);
+      }
+    }
+    showQuestion(); // Show the first question when the page loads
+  </script>
+</body>
+</html>
